@@ -11,7 +11,7 @@ function TopicList() {
 
   const loadData=()=>{
     setIsLoading(true)
-    axios.get('http://localhost:3000/api/topics').then(res=>{
+    axios.get('/api/topics').then(res=>{
       setTopics(res.data.data)
   }).finally(()=>{
     setIsLoading(false)
@@ -22,7 +22,7 @@ function TopicList() {
   },[])
 
   const handleDelete =(id)=>{
-    axios.delete(`http://localhost:3000/api/topics/${id}`).then(res=>{
+    axios.delete(`/api/topics/${id}`).then(res=>{
       loadData()
     })
   }

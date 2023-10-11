@@ -11,7 +11,7 @@ function AddTopic() {
   const handleSubmit =(e)=>{
     e.preventDefault()
     if(!topic.title||!topic.description) return alert('Fill all the fields!')
-    axios.post('http://localhost:3000/api/topics',topic).then(res=>{
+    axios.post('/api/topics',topic).then(res=>{
     router.push('/')
     })
   }

@@ -13,7 +13,7 @@ function EditTopicForm() {
     const handleSubmit =(e)=>{
       e.preventDefault()
       if(!topic.newTitle||!topic.newDescription) return alert('Fill all the fields!')
-      axios.put(`http://localhost:3000/api/topics/${id}`,topic).then(res=>{
+      axios.put(`/api/topics/${id}`,topic).then(res=>{
       router.push('/')
       })
     }
@@ -23,7 +23,7 @@ function EditTopicForm() {
     }
 
     useEffect(()=>{
-        axios.get(`http://localhost:3000/api/topics/${id}`).then(res=>{
+        axios.get(`/api/topics/${id}`).then(res=>{
             if(res.data.data){
                 setTopic({
                     newTitle:res.data.data.title,
